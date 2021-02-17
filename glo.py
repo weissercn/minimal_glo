@@ -225,7 +225,7 @@ def main(
 
             Z[idx.numpy()] = project_l2_ball(zi.data.cpu().numpy())
 
-            losses.append(loss.data[0])
+            losses.append(loss.data.cpu().numpy())
             progress.set_postfix({'loss': np.mean(losses[-100:])})
             progress.update()
 
